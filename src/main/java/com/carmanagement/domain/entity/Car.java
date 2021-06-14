@@ -1,7 +1,8 @@
-package com.carmanagement.entity;
+package com.carmanagement.domain.entity;
 
-import com.carmanagement.entity.request.CreateCarRequest;
+import com.carmanagement.domain.request.CreateCarRequest;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
@@ -14,6 +15,7 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class Car {
 
     @Id
@@ -21,9 +23,6 @@ public class Car {
     private Long id;
     private String brand;
     private String model;
-
-    public Car() {
-    }
 
     public Car(CreateCarRequest request) {
         this.brand = request.getMake();

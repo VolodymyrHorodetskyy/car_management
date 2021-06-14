@@ -1,7 +1,7 @@
 package com.carmanagement.service;
 
-import com.carmanagement.entity.Car;
-import com.carmanagement.entity.request.CreateCarRequest;
+import com.carmanagement.domain.entity.Car;
+import com.carmanagement.domain.request.CreateCarRequest;
 import com.carmanagement.repository.CarRepository;
 import org.springframework.stereotype.Service;
 

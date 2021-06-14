@@ -1,4 +1,4 @@
-package com.carmanagement.entity.request;
+package com.carmanagement.domain.request;
 
 import lombok.Getter;
 import lombok.Setter;

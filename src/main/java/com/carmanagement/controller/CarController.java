@@ -1,10 +1,11 @@
 package com.carmanagement.controller;
 
-import com.carmanagement.entity.Car;
-import com.carmanagement.entity.request.CreateCarRequest;
+import com.carmanagement.domain.entity.Car;
+import com.carmanagement.domain.request.CreateCarRequest;
 import com.carmanagement.service.CarService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  * created by Volodymyr Horodetskyi
  */
 @RestController
-@RequestMapping("/car")
+@RequestMapping("/cars")
 public class CarController {
 
     private CarService carService;
@@ -22,7 +23,7 @@ public class CarController {
     }
 
     @GetMapping
-    public List<Car> getAll() {
+    public List<Car> getAll(HttpServletRequest request) {
         return carService.getCars();
     }
 
@@ -31,8 +32,8 @@ public class CarController {
         return carService.createCar(request);
     }
 
-    @DeleteMapping
-    public void deleteCar(@RequestParam Long id) {
+    @DeleteMapping("{id}")
+    public void deleteCar(@PathVariable Long id) {
         carService.deleteCar(id);
     }
 }
