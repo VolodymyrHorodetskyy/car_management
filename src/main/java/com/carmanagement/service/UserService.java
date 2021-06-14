@@ -3,7 +3,7 @@ package com.carmanagement.service;
 import com.carmanagement.domain.entity.User;
 import com.carmanagement.domain.request.LoginRequest;
 import com.carmanagement.repository.UserRepository;
-import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -17,9 +17,9 @@ public class UserService {
 
     private UserRepository userRepository;
 
-    private AuthenticationManager au;
+    private AuthenticationProvider au;
 
-    public UserService(UserRepository userRepository, AuthenticationManager au) {
+    public UserService(UserRepository userRepository, AuthenticationProvider au) {
         this.userRepository = userRepository;
         this.au = au;
     }
